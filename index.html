@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guess number</title>
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <input type="number" id="numberInput"> 
+
+    <!-- when user clicked on submit button -->
+    <button onclick="guessNumber()">submit</button>
+
+    <p>Tries: <span id="triesText">0</span></p>
+
+    <p id="resultText"></p>
+
+
+    <script>
+        // first select a number.
+        var fixedNumber = 18;
+
+        var triesCount = 0;
+        
+
+        function guessNumber() {
+            if (triesCount == 11) {
+                document.getElementById('resultText').innerHTML = "GAME OVER";
+                return;
+            } 
+
+
+            // get the user input from the form
+            var userNumber = document.getElementById('numberInput').value;
+            
+
+            // compare the numbers and show the result.
+
+            if (userNumber > fixedNumber) {
+                document.getElementById('resultText').innerHTML = "Your guess is too high";
+            }
+
+            if (userNumber < fixedNumber) {
+                document.getElementById('resultText').innerHTML = "Your guess is too low";
+            }            
+
+            if (userNumber == fixedNumber) {
+                document.getElementById('resultText').innerHTML = "Your guess is correct";
+            }
+
+            triesCount = triesCount + 1;
+
+            // incrementing the triesCount values.
+            document.getElementById('triesText').innerHTML = triesCount;
+            
+            //number.
+            
+
+        }
+    </script>
+    
+</body>
+</html>
