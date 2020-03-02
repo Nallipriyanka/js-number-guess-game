@@ -1,64 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>guess number</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Number guess</title>
 </head>
+
 <body>
-    <h1>Number Guessing Game</h1>
-    <input type="number" id="numberInput"> 
-
-    <!-- when user clicked on submit button -->
-    <button onclick="guessNumber()">submit</button>
-
-    <p>Tries: <span id="triesText">0</span></p>
-
-    <p id="resultText"></p>
-
-
-    <script>
-        // first select a number.
-        var fixedNumber = 18;
-
-        var triesCount = 0;
-        
-
-        function guessNumber() {
-            if (triesCount == 11) {
-                document.getElementById('resultText').innerHTML = "GAME OVER";
-                return;
-            } 
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <h1>Number Guessing Game</h1>
+                <div class="form-group">
+                    <label for="numberInput">Guess the number</label>
+                    <input type="text" class="form-control" id="numberInput">
+                </div>
 
 
-            // get the user input from the form
-            var userNumber = document.getElementById('numberInput').value;
-            
+                <!-- when user clicked on submit button -->
+                <button class="btn btn-primary" type="submit" onclick="guessNumber()">Button</button>
 
-            // compare the numbers and show the result.
+                <p>Tries: <span id="triesText">0</span></p>
 
-            if (userNumber > fixedNumber) {
-                document.getElementById('resultText').innerHTML = "Your guess is too high";
-            }
-
-            if (userNumber < fixedNumber) {
-                document.getElementById('resultText').innerHTML = "Your guess is too low";
-            }            
-
-            if (userNumber == fixedNumber) {
-                document.getElementById('resultText').innerHTML = "Your guess is correct";
-            }
-
-            triesCount = triesCount + 1;
-
-            // incrementing the triesCount values.
-            document.getElementById('triesText').innerHTML = triesCount;
-            
-            //number.
-            
-
-        }
-    </script>
-    
+                <p id="resultText"></p>
+                
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
+
 </html>
